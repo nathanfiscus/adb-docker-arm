@@ -1,0 +1,16 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Community Hass.io Add-ons: Android Debug Bridge
+# Runs the Android Debug Bridge server
+# ==============================================================================
+declare -a options
+
+echo 'Starting the Android Debug Bridge server...'
+
+# Start options for ADB
+options+=(-a)
+options+=(server)
+options+=(nodaemon)
+
+# Run ADB
+exec adb "${options[@]}"
